@@ -1,1 +1,19 @@
+Report
+1) Describe your processing pipeline.
+The code loads the input image and converts it to grayscale.
+It then applies median filtering to reduce noise, enhances image contrast, detects edges using the Canny method, and applies a low-pass filter in the frequency domain. 
+Finally, it displays and saves the processed images.
 
+2) Explain how each stage relates to DSP operations.
+- Grayscale conversion: Simplifies the image by representing it with intensity values instead of colour channels.
+- Median filtering: Uses neighbouring pixel values to remove noise.
+- Contrast enhancement: Adjusts intensity levels to improve image visibility.
+- Canny edge detection: Uses image gradients to identify boundaries and sharp intensity changes.
+- Frequency-domain filtering: Uses FFT and a low-pass filter to reduce high-frequency components, such as noise and fine details.
+- Saving results: Stores the processed images for further analysis and comparison.
+
+3) Discuss improvements or limitations.
+The processing pipeline improves image quality by reducing noise, enhancing contrast and highlighting edges. 
+However, median and low-pass filtering can remove some fine details.
+Canny edge detection may also depend on the selected thresholds. 
+The results could be improved by adjusting filter parameters, selecting suitable thresholds and testing the pipeline on different images.

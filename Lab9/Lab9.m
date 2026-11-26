@@ -5,7 +5,7 @@ clear;
 clc;
 
 %% Image filenames
-imageFiles = {'studded_tire.jpg','summer_tire.jpg'};
+imageFiles = {'studded_tire.jpeg','summer_tire.jpg'};
 
 %% Detection parameters
 minA = 4;

@@ -1,0 +1,7 @@
+ImageType,Detector,Sigma,EdgePixelCount
+Clean,Sobel + Gaussian,1,2099
+Clean,Canny,1,7816
+Clean,Canny,3,2780
+Noisy,Sobel + Gaussian,1,2024
+Noisy,Canny,1,18122
+Noisy,Canny,3,3185

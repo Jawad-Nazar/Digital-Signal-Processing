@@ -5,11 +5,11 @@ clear;
 clc;
 
 %% 1. Load your own image
-if ~exist('your_image.jpg','file')
-    error('Place your_image.jpg in the current folder.');
+if ~exist('my_image.jpg','file')
+    error('Place my_image.jpg in the current folder.');
 end
 
-I0 = imread('your_image.jpg');
+I0 = imread('my_image.jpg');
 
 if size(I0,3) == 3
     I = im2double(rgb2gray(I0));

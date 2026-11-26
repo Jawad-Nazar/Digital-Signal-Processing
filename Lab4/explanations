@@ -1,1 +1,31 @@
+1) Add different noise types
+The code adds Gaussian noise and salt-and-pepper noise to the original image.
+This demonstrates how different types of noise affect image quality.
 
+2) Compute simple quality metrics
+The code calculates the Mean Squared Error (MSE) between the original and noisy images. 
+A higher MSE indicates a larger difference from the original image.
+
+3) Linear filtering (mean, Gaussian)
+The code applies mean and Gaussian filters to reduce noise. 
+Both filters smooth the image by combining neighbouring pixel values.
+
+4) Non-linear filtering (median)
+The code applies a median filter to remove noise by replacing each pixel with the median value of its neighbours.
+It helps preserve edges while reducing noise.
+
+5) Compare metrics after filtering
+The code calculates MSE again after filtering and compares the results. 
+Lower MSE indicates that the filtered image is closer to the original image.
+
+Reflections
+1) Which noise is best removed by median filter? Why?
+Salt-and-pepper noise is best removed by a median filter because it removes extreme black and white pixel values without averaging them with surrounding pixels.
+
+2) Why does linear filtering blur edges more?
+Linear filters average neighbouring pixels, including pixels on opposite sides of an edge.
+This reduces sharp intensity changes and makes edges appear blurred.
+
+3) How could we design adaptive filters to preserve detail?
+We could use adaptive filters that adjust their strength based on local image information.
+For example, they could apply stronger smoothing in flat areas and weaker smoothing near edges to preserve important details.

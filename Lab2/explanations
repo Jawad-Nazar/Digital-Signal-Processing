@@ -1,1 +1,21 @@
+Steps Explanation:
+1.A 3×3 impulse response around the center pixel
+2.Different levels of image smoothing
+3.Sharpened image with enhanced details
+4.Horizontal, vertical and combined edges
+5.Approximately zero difference
+6.Three different boundary treatments
 
+7.Reflection questions:
+1. Why is Gaussian preferred over a large box low-pass filter?
+A Gaussian filter produces smoother frequency responses and reduces abrupt changes in the frequency domain.
+It also creates more natural-looking blur with fewer unwanted artifacts.
+
+2. What does separability do for computational cost?
+A separable 2D Gaussian filter can be implemented using two 1D filtering operations(horizontal and vertical) which reduces computational complexity.
+
+3. How do boundary modes change corners and edges?
+Replicate: Repeats the nearest edge pixel.
+Symmetric: Reflects the image at its boundary.
+Circular: Wraps pixels from the opposite side.
+These methods produce different results near image boundaries.

@@ -1,1 +1,31 @@
+1) Magnitude spectrum (log-scale)
+The code uses FFT to convert the image into the frequency domain. 
+The log-scale magnitude spectrum makes low- and high-frequency components easier to see. 
+Bright areas represent stronger frequency components.
 
+2) Ideal & Gaussian Low-pass in frequency
+The code creates two low-pass filters. 
+The ideal filter sharply removes frequencies outside a selected radius, while the Gaussian filter gradually reduces higher frequencies.
+
+3) Apply LP filters in frequency domain
+The code multiplies the image's Fourier transform by each low-pass filter and then applies inverse FFT.
+The resulting images are smoother because high-frequency details and noise are reduced.
+
+4) High-pass via complement
+The code creates high-pass filters by subtracting the low-pass filters from 1.
+This removes low-frequency components and preserves high-frequency details, making edges and fine structures more visible.
+
+5) Compare spatial vs frequency-domain Gaussian LP
+The code compares Gaussian smoothing in the spatial domain with Gaussian filtering in the frequency domain. 
+Both produce similar smoothing effects, although small differences can occur due to padding, filter implementation and boundary handling.
+
+6) Reflection answers:
+1. Why does ideal LP cause ringing (Gibbs phenomenon)?
+An ideal low-pass filter has a sharp cutoff in the frequency domain.
+Its spatial impulse response extends with oscillations causing ringing around sharp edges.
+
+2. What does fftshift do visually?
+fftshift moves the zero-frequency component to the center of the spectrum which makes the low-frequency components easier to visualize.
+
+3. When is frequency-domain filtering computationally preferable?
+It is useful for large kernels, repeated filtering, and operations involving frequency masks.

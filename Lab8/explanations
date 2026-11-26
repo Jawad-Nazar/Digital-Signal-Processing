@@ -1,1 +1,14 @@
+1) Load Image and AI Network
+The code loads the input image and prepares it for analysis.
+It also loads the pretrained SqueezeNet neural network which is used for image classification.
 
+2) Traditional Method (Color Segmentation using K-Means)
+The code converts the image into LAB colour space and uses K-means clustering to group pixels with similar colours.
+One of the clusters is selected to create a mask that separates the target colour region from the rest of the image.
+
+3) AI Method (Image Classification)
+The code uses SqueezeNet to analyse the image and predict its most likely category displaying the predicted label and confidence score.
+
+4) Results Analysis
+The code displays and compares the K-means segmentation result with the AI classification result.
+K-means identifies regions based on colour similarity, while SqueezeNet recognises objects based on features learned during training.

@@ -1,1 +1,30 @@
+1) Basic derivative filters (Sobel, Prewitt)
+The code applies Sobel and Prewitt filters to detect edges by measuring changes in pixel intensity. 
+These filters highlight horizontal and vertical edges in the image.
 
+2) Canny detector (multi-stage)
+The code applies the Canny edge detector to identify clear edges. 
+It uses noise reduction, gradient calculation and edge tracking to produce thin and connected edges.
+
+3) Laplacian of Gaussian (LoG)
+The code first smooths the image with a Gaussian filter and then applies the Laplacian operator to detect edges. 
+This helps reduce noise before edge detection.
+
+4) Edge map → segmentation (Otsu threshold)
+The code uses Otsu's method to automatically calculate a threshold and convert the image into a binary image. 
+This separates detected foreground regions from the background.
+
+5) Label and visualize regions
+The code identifies connected white regions in the binary image and assigns each region a label. 
+It also measures properties such as area and centroid and displays the detected regions.
+
+Reflections:
+1) Which operator gives the thinnest, cleanest edges?
+Canny usually produces the thinnest and cleanest edges because it uses non-maximum suppression and hysteresis thresholding.
+
+2) Why does Canny outperform simple gradient filters?
+Canny uses several processing stages to reduce noise, remove weak edges and connect meaningful edges.
+Sobel and Prewitt mainly detect intensity changes and can produce thicker or noisier edges.
+
+3) How does Otsu relate to histogram-based thresholding?
+Otsu analyses the image intensity histogram and automatically selects a threshold that separates pixels into two groups by maximizing the difference between their variances.

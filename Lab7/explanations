@@ -1,1 +1,19 @@
+1. Setup: Load an image and add Gaussian noise
+The code loads the original image and adds Gaussian noise to simulate a noisy image. 
+This noisy image is used to test the denoising methods.
 
+2. Traditional Filter (Adaptive Wiener Filter)
+The code applies an adaptive Wiener filter to reduce noise.
+It estimates local image statistics and adjusts the filtering based on the surrounding pixels.
+
+3. AI Filter (Pre-trained DnCNN)
+The code uses a pretrained DnCNN deep-learning network to remove noise from the image. 
+The network has learned to recognise and remove noise while preserving image details.
+
+4. Quantitative Evaluation (PSNR and SSIM)
+The code calculates PSNR and SSIM to compare the denoised images with the original image. 
+Higher PSNR and SSIM values generally indicate better image quality and similarity.
+
+5. Visual Observation
+The code displays the original, noisy and denoised images side by side. 
+This makes it possible to visually compare how well the Wiener filter and DnCNN remove noise and preserve image details.

@@ -1,0 +1,42 @@
+0) Load and inspect an image
+imread() and imshow() function are used to read and display the image.
+RGB image conversion into grayscale image using the rgb2gray() function.
+The minimum and maximum pixel intensity values, image dimensions, and data type are also displayed.
+
+
+1) Quantization and dynamic range
+The original 8-bit grayscale image is converted and compared with 6-bit and 4-bit representations.
+
+2)Histogram and contrast stretching figure;
+The intensity distribution of the grayscale image is analyzed using a histogram.
+The imhist() function displays the histogram of the original image.
+The mat2gray() function normalizes image intensity values to the range [0,1].
+The imadjust() function is used to perform contrast stretching.
+
+3) Gamma correction (nonlinear amplitude scaling)
+Gamma correction is applied using two different gamma values:
+Gamma = 0.6
+Gamma = 1.6
+imadjust() function is used to change the brightness of the image.
+
+4) Sampling and aliasing (downsample then upsample)
+The grayscale image is reduced to 10% of its original dimensions using the imresize() function.
+The smaller image is then resized back to its original dimensions using nearest-neighbor interpolation.
+
+Short RFeflections:
+1) Relate bit-depth to visible banding/posterization you observed.
+Bit-depth determines the number of intensity levels an image can represent. 
+8-bit = 256 intensity levels
+6-bit = 64
+4-bit = 16
+Lower bit-depth causes loss of intensity information, resulting in visible banding and posterization.
+
+2) How does contrast stretching change the histogram and visibility of details?
+Contrast stretching spreads pixel intensity values across a wider range. 
+This changes the histogram distribution and improves the difference between dark and bright areas. 
+As a result, details become easier to see, especially in low-contrast images.
+
+3) Explain why aggressive downsampling causes aliasing (reference Nyquist).
+Aggressive downsampling reduces the number of pixels used to represent an image. 
+If the sampling frequency is too low then the high-frequency details cannot be represented correctly. 
+According to the Nyquist theorem, the sampling frequency must be at least twice the highest signal frequency or else aliasing and distortion can occur.
